@@ -1,0 +1,11 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Your rule content
+
+- Write minimal code to accomplish the feature or design. 
+- The front-end is built using Shadcn. All of the shadcn components are already installed and located under /components/ui 
+- Any custom components we create should be located in components/custom folder
+- We use Tailwind css for all our styling
