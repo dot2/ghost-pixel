@@ -11,6 +11,7 @@ import BenefitsSection from "@/components/BenefitsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import FAQsSection from "@/components/FAQsSection";
 import Footer from "@/components/custom/Footer";
+import Testimonial from "@/components/custom/Testimonial";
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -84,8 +85,8 @@ export default function Home() {
             <p className="text-2xl mt-6 text-muted-foreground max-w-[45ch]">We help founders and product teams transform complex ideas into scalable, intuitive software – fast.</p>
             <div className="flex flex-col md:flex-row gap-4 mt-12">
               <Button variant="outline" size="lg" asChild>
-                <Link 
-                  href="#case-studies" 
+                <Link
+                  href="#case-studies"
                   onClick={(e) => handleScrollToSection(e, 'case-studies')}
                 >
                   Recent work
@@ -97,6 +98,15 @@ export default function Home() {
                   <RiFlashlightFill className="text-2xl" />
                 </Link>
               </Button>
+            </div>
+
+            {/* Testimonial added here */}
+            <div className="mt-6 md:mt-8">
+              <Testimonial
+                quote="Dylan has taste, and that taste materialized in the quality of the products he launched."
+                name="Product Manager @ AWS"
+                rating={5}
+              />
             </div>
 
             {/* Images Grid */}
@@ -181,18 +191,18 @@ export default function Home() {
               />
               <WorkCard
                 videoSrc="/videos/synthesis-video-thumbnail.mp4"
-                title="Exploring the future of Cloud"
-                description="Establishing a north start and pushing innovation for IBM Cloud."
-                tags={["Strategy", "Product", "Design System"]}
-                href="/case-studies/whatif"
+                title="Scaling a design system for AWS service teams"
+                description="Created to help unify the experiences of AWS service teams building outside of the console."
+                tags={["Design System", "Product"]}
+                href="/case-studies/synthesis-design-system"
                 aspectRatio="aspect-video" // Explicitly set default
               />
               <WorkCard
                 videoSrc="/videos/howser-video-thumbnail.mp4"
-                title="New brand and site to mark Utility's 10th anniversary"
-                description="Refreshing the brand identity and website for the pioneering tech company"
-                tags={["Brand", "Website Design"]}
-                href="/case-studies/utility"
+                title="Guided onboarding experiences for AWS services"
+                description="Revamped the onboarding experiences for 3 AWS services: Amazon Bedrock, SageMaker Canvas, and Amazon Transcribe."
+                tags={["Onboarding", "Product"]}
+                href="/case-studies/howser"
                 aspectRatio="aspect-video" // Explicitly set default
               />
             </div>
@@ -233,21 +243,12 @@ export default function Home() {
 
                 {/* Testimonial */}
                 <div className="mb-8">
-                  <div className="flex items-start gap-3 mb-2">
-                    <div className="w-10 h-10 rounded-full overflow-hidden relative">
-                      <Image
-                        src="/placeholder-image.jpeg"
-                        alt="Harsh Patel"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div>
-                      <p className="font-semibold">Harsh Patel</p>
-                      <p className="text-sm ">Founder at Macro</p>
-                      <p className="text-gray-500 text-sm ">Phenomenal, fast, great designs.</p>
-                    </div>
-                  </div>
+                  <Testimonial
+                    quote="Dylan's super-powers are ownership, earning trust, and his technical skill."
+                    name="Engineering Manager @ AWS"
+                    rating={5}
+                    variant="default"
+                  />
                 </div>
 
                 {/* Features */}
@@ -303,28 +304,14 @@ export default function Home() {
                   </Link>
                 </Button>
 
-                {/* Rating */}
-                <div className="flex text-yellow-300 text-xl mb-4">
-                  ★★★★★
-                </div>
-
                 {/* Testimonial */}
                 <div className="mb-8">
-                  <div className="flex items-start gap-3 mb-2">
-                    <div className="w-10 h-10 rounded-full overflow-hidden relative">
-                      <Image
-                        src="/placeholder-image.jpeg"
-                        alt="Harsh Patel"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div>
-                      <p className="font-semibold">Harsh Patel</p>
-                      <p className="text-sm ">Founder at Macro</p>
-                      <p className="text-gray-400 text-sm ">Phenomenal, fast, great designs.</p>
-                    </div>
-                  </div>
+                  <Testimonial
+                    quote="Consistently jumping in and making a huge impact."
+                    name="Design Director @ IBM"
+                    rating={5}
+                    variant="inverse"
+                  />
                 </div>
 
                 {/* Features */}
@@ -394,6 +381,14 @@ function CapabilitiesSection() {
             >
               All your design needs handled
             </motion.h2>
+            {/* Added Testimonial here */}
+            <div className="pt-8">
+              <Testimonial 
+                quote="Dylan is willing to get started when other's might still be gathering requirements and analyzing the problem."
+                name="Designer @ AWS"
+                rating={5}
+              />
+            </div>
           </div>
         </div>
         <div className="py-12 md:py-20 space-y-12 md:space-y-20 ">
