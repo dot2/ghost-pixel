@@ -12,6 +12,7 @@ import HowItWorksSection from "@/components/HowItWorksSection";
 import FAQsSection from "@/components/FAQsSection";
 import Footer from "@/components/custom/Footer";
 import Testimonial from "@/components/custom/Testimonial";
+import UsersSection from "@/components/UsersSection";
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -83,30 +84,31 @@ export default function Home() {
           <div className="w-full max-w-6xl">
             <h1 className="text-5xl md:text-8xl font-bold text-balance">The Product Design Partner for Founders and Builders.</h1>
             <p className="text-2xl mt-6 text-muted-foreground max-w-[45ch]">We help founders and product teams transform complex ideas into scalable, intuitive software – fast.</p>
-            <div className="flex flex-col md:flex-row gap-4 mt-12">
-              <Button variant="outline" size="lg" asChild>
-                <Link
-                  href="#case-studies"
-                  onClick={(e) => handleScrollToSection(e, 'case-studies')}
-                >
-                  Recent work
-                </Link>
-              </Button>
-              <Button variant="default" size="lg">
-                <Link href="https://cal.com/dylan-dotolo/20min" target="_blank" rel="noopener noreferrer" className="flex flex-row items-center gap-2">
-                  Get your designs fast
-                  <RiFlashlightFill className="text-2xl" />
-                </Link>
-              </Button>
-            </div>
+            <div className="mt-12 flex flex-col lg:flex-row lg:justify-between lg:items-start gap-y-6 lg:gap-x-8">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button variant="outline" size="lg" asChild>
+                  <Link
+                    href="#case-studies"
+                    onClick={(e) => handleScrollToSection(e, 'case-studies')}
+                  >
+                    Recent work
+                  </Link>
+                </Button>
+                <Button variant="default" size="lg">
+                  <Link href="https://cal.com/dylan-dotolo/20min" target="_blank" rel="noopener noreferrer" className="flex flex-row items-center gap-2">
+                    Get your designs fast
+                    <RiFlashlightFill className="text-2xl" />
+                  </Link>
+                </Button>
+              </div>
 
-            {/* Testimonial added here */}
-            <div className="mt-6 md:mt-8">
-              <Testimonial
-                quote="Dylan has taste, and that taste materialized in the quality of the products he launched."
-                name="Product Manager @ AWS"
-                rating={5}
-              />
+              <div className="w-full sm:w-auto sm:max-w-xs md:max-w-sm lg:max-w-md">
+                <Testimonial
+                  quote="Dylan has taste, and that taste materialized in the quality of the products he launched."
+                  name="Product Manager @ AWS"
+                  rating={5}
+                />
+              </div>
             </div>
 
             {/* Images Grid */}
@@ -159,6 +161,7 @@ export default function Home() {
         </section>
         <CapabilitiesSection />
         <HowItWorksSection />
+        <UsersSection />
         {/* Case Studies Section */}
         <section className="w-full flex flex-col items-center justify-start p-6 md:p-20" id="case-studies"> {/* Changed background for contrast */}
           <div className="w-full max-w-6xl">
