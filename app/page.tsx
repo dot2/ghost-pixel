@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { RiFlashlightFill } from "@remixicon/react";
+import { RiFlashlightFill, RiFigmaLine, RiLinkedinFill } from "@remixicon/react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import Link from "next/link";
@@ -90,8 +90,10 @@ export default function Home() {
                   <Link
                     href="#case-studies"
                     onClick={(e) => handleScrollToSection(e, 'case-studies')}
+                    className="flex flex-row items-center gap-2"
                   >
                     Recent work
+                    <RiFigmaLine className="text-xl" />
                   </Link>
                 </Button>
                 <Button variant="default" size="lg">
@@ -137,12 +139,12 @@ export default function Home() {
         <section className="w-full flex flex-col items-center justify-start p-6 md:p-20 bg-gray-50">
           <div className="w-full max-w-6xl">
             <p className="md:text-5xl text-4xl mt-6 text-primary font-normal leading-tight">
-              Ghost Pixel turns complex ideas into <span className="bg-gradient-to-tl from-amber-500 to-amber-600 bg-clip-text text-transparent">beautiful, usable products</span>.
-              We work with founders and technical teams to design clear interfaces, scalable systems, and <span className="bg-gradient-to-tl from-amber-500 to-amber-600 bg-clip-text text-transparent">bold product visions</span> — fast.
+              Ghost Pixel turns complex ideas into <span className="bg-gradient-to-tl from-amber-400 to-amber-600 bg-clip-text text-transparent">beautiful, usable products</span>.
+              We work with founders and technical teams to design clear interfaces, scalable systems, and <span className="bg-gradient-to-tl from-amber-400 to-amber-600 bg-clip-text text-transparent">bold product visions</span> — fast.
             </p>
 
             {/* Profile Video and Name */}
-            <div className="mt-8 flex items-center gap-4">
+            <div className="mt-8 flex items-start gap-4">
               <div className="w-14 h-14 rounded-full overflow-hidden relative">
                 <video
                   src="/videos/profile-video.mp4"
@@ -153,9 +155,22 @@ export default function Home() {
                   className="absolute top-0 left-0 w-full h-full object-cover"
                 />
               </div>
-              <p className="text-lg font-serif text-muted-foreground font-medium">
-                Dylan Dotolo – Founder
-              </p>
+              <div className="flex flex-col">
+                <p className="text-lg font-serif text-muted-foreground font-medium mb-3">
+                  Dylan Dotolo – Founder
+                </p>
+                <Button variant="ghost" size="sm" asChild>
+                  <Link
+                    href="https://www.linkedin.com/in/dylandotolo/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-row items-center gap-2 text-muted-foreground"
+                  >
+                    <RiLinkedinFill className="text-lg" />
+                    LinkedIn
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
         </section>
@@ -230,6 +245,15 @@ export default function Home() {
 
                 <h3 className="text-3xl md:text-4xl font-bold mb-6">One-off sprint</h3>
 
+                {/* Pricing */}
+                <div className="mb-6">
+                  <div className="flex items-baseline gap-2 mb-1">
+                    <span className="text-sm text-gray-600">Starting at</span>
+                    <span className="text-2xl md:text-3xl font-bold text-primary">$5,000</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground font-medium">Final price based on project scope</p>
+                </div>
+
                 <p className="text-gray-600 mb-2">
                   For teams that need a high-impact push, fast.
                 </p>
@@ -288,6 +312,16 @@ export default function Home() {
                 <Badge variant="secondary" className="mb-6">Design parnter</Badge>
 
                 <h3 className="text-3xl md:text-4xl font-bold mb-6">Retainer</h3>
+
+                {/* Pricing */}
+                <div className="mb-6">
+                  <div className="flex items-baseline gap-3 mb-2">
+                    <span className="text-2xl md:text-3xl font-bold text-amber-400">$8,000</span>
+                    <span className="text-lg text-gray-400 line-through">$10,000</span>
+                    <span className="text-sm text-gray-300">/ month</span>
+                  </div>
+                  <p className="text-sm text-amber-400 font-medium">Founding discount for first 5 clients</p>
+                </div>
 
                 <p className="text-gray-300 mb-2">
                   The fastest way to scale product design – without hiring full-time.

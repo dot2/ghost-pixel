@@ -1,5 +1,7 @@
 import React from 'react';
-import { RiAlignLeft, RiAlignItemLeftFill, RiBrushFill, RiRuler2Fill } from "@remixicon/react";
+import { RiAlignLeft, RiAlignItemLeftFill, RiBrushFill, RiRuler2Fill, RiExternalLinkFill } from "@remixicon/react";
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 
 const HowItWorksSection = () => {
@@ -63,6 +65,24 @@ const HowItWorksSection = () => {
             </div>
             <RiRuler2Fill className="text-primary text-4xl mt-4" />
           </div>
+        </div>
+
+        {/* Template CTA Section */}
+        <div className="w-full mt-8 md:mt-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <p className="text-base text-muted-foreground max-w-[55ch]">
+            Want a glimpse into our process? View our product thinking template to see how we think and operate to solve your problems.
+          </p>
+          <Button variant="outline" size="default" asChild className="md:flex-shrink-0">
+            <Link 
+              href="https://www.notion.so/Product-Template-1eed9861790880379fd8f9742f872038?source=copy_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-row items-center gap-2"
+            >
+              View our product template
+              <RiExternalLinkFill className="text-lg" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

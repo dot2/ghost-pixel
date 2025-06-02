@@ -1,15 +1,15 @@
 import Link from 'next/link';
-import { RiGithubFill, RiTwitterFill, RiLinkedinBoxFill, RiInstagramFill } from '@remixicon/react';
+import Image from 'next/image';
+import { RiLinkedinBoxFill, RiAtLine, RiMailFill } from '@remixicon/react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   // Define social links here for easy management
   const socialLinks = [
-    { name: 'GitHub', href: '#', icon: RiGithubFill },
-    { name: 'Twitter', href: '#', icon: RiTwitterFill },
-    { name: 'LinkedIn', href: '#', icon: RiLinkedinBoxFill },
-    { name: 'Instagram', href: '#', icon: RiInstagramFill },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/dylandotolo/', icon: RiLinkedinBoxFill },
+    { name: 'Threads', href: 'https://www.threads.com/@dylandotolo', icon: RiAtLine },
+    { name: 'Email', href: 'mailto:dylan@ghostpixel.co', icon: RiMailFill },
   ];
 
   // Define navigation links
@@ -25,11 +25,17 @@ const Footer = () => {
       <div className="w-full max-w-6xl mx-auto px-6 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start mb-10">
           {/* Column 1: Brand and Copyright */}
-          <div className="space-y-4">
-            <Link href="/" className="text-2xl font-bold hover:text-gray-300 transition-colors">
-              Ghost Pixel
+          <div className="space-y-2">
+            <Link href="/" className="inline-block hover:opacity-80 transition-opacity">
+              <Image 
+                src="/gp-logos/gp-logo-spot.svg" 
+                alt="Ghost Pixel Logo" 
+                width={32} 
+                height={32}
+                className="w-8 h-8 brightness-0 invert"
+              />
             </Link>
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-gray-400 text-balance">
               Transforming complex ideas into beautiful, usable software.
             </p>
           </div>
