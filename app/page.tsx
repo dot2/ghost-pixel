@@ -117,11 +117,11 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
               {/* Work Card */}
               <WorkCard
-                videoSrc="/videos/snowflake-openflow-thumbnail.mp4"
-                title="Designing Snowflake's data ingestion tool."
-                description="Integrating Apache Nifi to become Snowflake native to bring all your data into Snowflake with ease."
-                tags={["Product", "Data Engineering", "UX"]}
-                href="/case-studies/snowflake-openflow"
+                videoSrc="/videos/datavolo-vid.mp4"
+                title="New brand site and AI copilot integration"
+                description="Refreshing the webiste and integrating AI for data engineers."
+                tags={["Brand", "Website Design", "Product"]}
+                href="/case-studies/datavolo"
               />
 
               {/* Video 2 -> Replaced with WorkCard */}
